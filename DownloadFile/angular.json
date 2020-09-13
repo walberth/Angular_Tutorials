@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "UploadFileAngularMaterial": {
+    "DownloadFile": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,18 +13,19 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/UploadFileAngularMaterial",
+            "outputPath": "dist/DownloadFile",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css",
+              "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": []
           },
@@ -45,7 +42,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -67,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "UploadFileAngularMaterial:build"
+            "browserTarget": "DownloadFile:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "UploadFileAngularMaterial:build:production"
+              "browserTarget": "DownloadFile:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "UploadFileAngularMaterial:build"
+            "browserTarget": "DownloadFile:build"
           }
         },
         "test": {
@@ -93,7 +89,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -115,19 +111,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "UploadFileAngularMaterial:serve"
+            "devServerTarget": "DownloadFile:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "UploadFileAngularMaterial:serve:production"
+              "devServerTarget": "DownloadFile:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "UploadFileAngularMaterial",
+  "defaultProject": "DownloadFile",
   "cli": {
-    "analytics": "33f72fe8-557e-449b-bfb1-02cf4fd40fae"
+    "analytics": "726a12d7-2866-4a90-b725-178e1cf82f7b"
   }
 }
